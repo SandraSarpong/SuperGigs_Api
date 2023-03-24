@@ -2,9 +2,9 @@ import createError from "../utils/createError.js";
 import Conversation from "../models/conversation.model.js";
 
 export const createConversation = async (req, res, next) => {
-  //check whether the authenticated user is a seller or a buyer, 
+  //check whether the authenticated user is a seller or a buyer,
   //and set the sellerId and buyerId properties accordingly.
-  
+
   const sellerId = req.isSeller ? req.userId : req.body.to;
   const buyerId = req.isSeller ? req.body.to : req.userId;
 

@@ -13,7 +13,6 @@ const ConversationSchema = new Schema(
     },
     buyerId: {
       type: String,
-    
     },
     readBySeller: {
       type: Boolean,

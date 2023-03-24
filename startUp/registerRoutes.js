@@ -10,7 +10,6 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { errorHandler } from "../middleware/errorHandler.js";
 
-
 export const setUpRoutes = (app) => {
   app.use(express.json());
   app.use(cors());
@@ -25,5 +24,3 @@ export const setUpRoutes = (app) => {
   app.use("/api/reviews", reviewRoute);
   app.use(errorHandler);
 };
-
-
