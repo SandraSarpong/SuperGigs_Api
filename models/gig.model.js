@@ -53,7 +53,7 @@ const GigSchema = new Schema(
     },
     revisionNumber: {
       type: Number,
-      required: true,
+      required: false,
     },
     features: {
       type: [String],
