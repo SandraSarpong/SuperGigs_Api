@@ -12,14 +12,14 @@ import { errorHandler } from "../middleware/errorHandler.js";
 
 export const setUpRoutes = (app) => {
   app.use(express.json());
-//   app.use(cors({
-//     'allowedHeaders': ['sessionId', 'Content-Type'],
-//     'exposedHeaders': ['sessionId'],
-//     'origin': '*',
-//     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//     'preflightContinue': false
-//   }));
-  app.use(cors({ origin: "http://127.0.0.1:5173", credentials: true }));
+  app.use(cors({
+    'allowedHeaders': ['sessionId', 'Content-Type'],
+    'exposedHeaders': ['sessionId'],
+    'origin': 'http://127.0.0.1:5173',
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false,
+    credentials: true
+  }));
   app.use(express.json());
   app.use(cookieParser());
   app.use(express.urlencoded({ extended: true }));
