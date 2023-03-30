@@ -12,15 +12,17 @@ import { errorHandler } from "../middleware/errorHandler.js";
 
 export const setUpRoutes = (app) => {
   app.use(express.json());
-  app.use(cors({
-    'allowedHeaders': ['sessionId', 'Content-Type'],
-    'exposedHeaders': ['sessionId'],
-    'origin': '*',
-    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    'preflightContinue': false
-  }));
-  app.use(express.urlencoded({ extended: true }));
+//   app.use(cors({
+//     'allowedHeaders': ['sessionId', 'Content-Type'],
+//     'exposedHeaders': ['sessionId'],
+//     'origin': '*',
+//     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     'preflightContinue': false
+//   }));
+  app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+  app.use(express.json());
   app.use(cookieParser());
+  app.use(express.urlencoded({ extended: true }));
   app.use("/api/auth", authRoute);
   app.use("/api/users", userRoute);
   app.use("/api/gigs", gigRoute);
