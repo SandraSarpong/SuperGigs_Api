@@ -15,7 +15,7 @@ export const setUpRoutes = (app) => {
   app.use(cors({
     'allowedHeaders': ['sessionId', 'Content-Type'],
     'exposedHeaders': ['sessionId'],
-    'origin': 'http://127.0.0.1:5173',
+    'origin': 'http://supergigs.reglonow.org',
     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
     'preflightContinue': false,
     credentials: true
